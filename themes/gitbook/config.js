@@ -1,17 +1,17 @@
 const CONFIG = {
 
-  INDEX_PAGE: 'about', // 文档首页显示的文章，请确此路径包含在您的notion数据库中
+  INDEX_PAGE: 'about', //Articles displayed on the document homepage, please make sure this path is included in your notice database
 
-  AUTO_SORT: process.env.NEXT_PUBLIC_GITBOOK_AUTO_SORT || true, // 是否自动按分类名 归组排序文章；自动归组可能会打乱您Notion中的文章顺序
+  AUTO_SORT: process.env.NEXT_PUBLIC_GITBOOK_AUTO_SORT || true, // Whether to automatically sort articles by category name; automatic grouping may disrupt the order of articles in your Notion
 
-  // 菜单
-  MENU_CATEGORY: true, // 显示分类
-  MENU_TAG: true, // 显示标签
-  MENU_ARCHIVE: true, // 显示归档
-  MENU_SEARCH: true, // 显示搜索
+  // Menu
+  MENU_CATEGORY: true, // Display category
+  MENU_TAG: true, // show tag
+  MENU_ARCHIVE: true, // Show archive
+  MENU_SEARCH: true, // Display search
 
   // Widget
-  WIDGET_REVOLVER_MAPS: process.env.NEXT_PUBLIC_WIDGET_REVOLVER_MAPS || 'false', // 地图插件
-  WIDGET_TO_TOP: true // 跳回顶部
+  WIDGET_REVOLVER_MAPS: process.env.NEXT_PUBLIC_WIDGET_REVOLVER_MAPS || 'false', // Map plugin
+  WIDGET_TO_TOP: true // Jump back to top
 }
 export default CONFIG
