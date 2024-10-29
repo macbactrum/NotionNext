@@ -3,9 +3,9 @@ import { useRouter } from 'next/router'
 import { useGlobal } from '@/lib/global'
 
 /**
- * 简易翻页插件
- * @param page 当前页码
- * @param totalPage 是否有下一页
+ * Simple page turning plug-in
+ * @param page current page number
+ * @param totalPage whether there is a next page
  * @returns {JSX.Element}
  * @constructor
  */
