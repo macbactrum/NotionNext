@@ -1,7 +1,7 @@
 import { useGitBookGlobal } from '@/themes/gitbook'
 
 /**
- * 移动端悬浮目录按钮
+ * Mobile floating directory button
  */
 export default function FloatTocButton () {
   const { tocVisible, changeTocVisible } = useGitBookGlobal()
