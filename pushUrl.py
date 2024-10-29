@@ -9,7 +9,7 @@ import argparse
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
-# 每日推送限额，可根据实际情况修改
+# The daily push limit can be modified according to the actual situation.
 QUOTA = 100
 
 
@@ -20,10 +20,10 @@ def parse_stiemap(site):
         big = re.findall('<loc>(.*?)</loc>', result.content.decode('utf-8'), re.S)
         return list(big)
     except:
-        print('请检查你的url是否有误。')
-        print('正确的应是完整的域名，包含https://，且不包含‘sitemap.xml’, 如下所示：')
-        print('正确的示例: https://ghlcode.cn')
-        print('详情参见: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
+        print('Please check whether your url is correct.')
+        print('The correct one should be the complete domain name, including https://, and not including 'sitemap.xml', as shown below:')
+        print('Correct example: https://ghlcode.cn')
+        print('For details, please see: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
 
 
 
@@ -39,9 +39,9 @@ def push_to_bing(site, urls, api_key):
         response = requests.post(endpoint, json=payload)
         result = response.json()
         if response.status_code == 200:
-            print("成功推送到Bing.")
+            print("successfully pushed to Bing.")
         elif "ErrorCode" in result:
-            print("推送到Bing出现错误，错误信息为：", result["Message"])
+            print("An error occurred when pushing to Bing, the error message is：", result["Message"])
     except Exception as e:
         print("An error occurred:", e)
 
@@ -56,9 +56,9 @@ def push_to_baidu(site, urls, token):
         response = requests.post(api_url, data=payload, headers=headers)
         result = response.json()
         if "success" in result and result["success"]:
-            print("成功推送到百度.")
+            print("Successfully pushed to Baidu.")
         elif "error" in result:
-            print("推送到百度出现错误，错误信息为：", result["message"])
+            print("An error occurred when pushing to Baidu. The error message is：", result["message"])
         else:
             print("Unknown response from Baidu:", result)
     except Exception as e:
@@ -72,25 +72,25 @@ if __name__ == '__main__':
     parser.add_argument('--baidu_token', type=str, default=None, help='Your baidu push token')
     args = parser.parse_args()
 
-    # 获取当前的时间戳作为随机种子
+    # Get the current timestamp as a random seed
     current_timestamp = int(time.time())
     random.seed(current_timestamp)
 
     if args.url:
-        # 解析urls
+        # Parse urls
         urls = parse_stiemap(args.url)
         if urls is not None:
-            # 判断当前urls数量是否超过额度，若超过则取当日最大值，默认为100，可根据实际情况修改
+            # Determine whether the current number of URLs exceeds the quota. If it exceeds the quota, the maximum value of the day is taken. The default is 100, which can be modified according to the actual situation.
             if len(urls) > QUOTA:
                 urls = random.sample(urls, QUOTA)
-            # 推送bing
+            # Push Bing
             if args.bing_api_key:
-                print('正在推送至必应，请稍后……')
+                print('Pushing to Bing, please wait……')
                 push_to_bing(args.url, urls, args.bing_api_key)
-            # 推送百度
+            # Push Baidu
             if args.baidu_token:
-                print('正在推送至百度，请稍后……')
+                print('Pushing to Baidu, please wait……')
                 push_to_baidu(args.url, urls, args.baidu_token)
     else:
-        print('请前往 Github Action Secrets 配置 URL')
-        print('详情参见: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
+        print('Please go to Github Action Secrets Configuration URL')
+        print('For details, see: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
