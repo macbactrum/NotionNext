@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 /**
- * 上一篇，下一篇文章
+ * Previous article, next article
  * @param {prev,next} param0
  * @returns
  */
