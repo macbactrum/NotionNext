@@ -4,7 +4,7 @@ import { useGitBookGlobal } from '@/themes/gitbook'
 import Link from 'next/link'
 
 /**
- * Logo区域
+ * Logo area
  * @param {*} props
  * @returns
  */
