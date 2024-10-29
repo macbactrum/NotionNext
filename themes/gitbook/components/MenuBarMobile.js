@@ -20,7 +20,7 @@ export const MenuBarMobile = (props) => {
     links = links.concat(customNav)
   }
 
-  // 如果 开启自定义菜单，则不再使用 Page生成菜单。
+// If the custom menu is enabled, Page will no longer be used to generate the menu.
   if (BLOG.CUSTOM_MENU) {
     links = customMenu
   }
