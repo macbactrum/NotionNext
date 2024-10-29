@@ -2,7 +2,7 @@ import { useGitBookGlobal } from '@/themes/gitbook'
 import Catalog from './Catalog'
 
 /**
- * 悬浮抽屉目录
+ * Floating drawer catalog
  * @param toc
  * @param post
  * @returns {JSX.Element}
@@ -15,7 +15,7 @@ const TocDrawer = ({ post, cRef }) => {
   }
   return <>
     <div id='gitbook-toc-float' className='fixed top-0 right-0 z-40 md:hidden'>
-      {/* 侧边菜单 */}
+      {/* side menu */}
       <div
         className={(tocVisible ? 'animate__slideInRight ' : ' -mr-72 animate__slideOutRight') +
         ' overflow-y-hidden shadow-card w-60 duration-200 fixed right-1 bottom-16 rounded py-2 bg-white dark:bg-hexo-black-gray'}>
@@ -26,7 +26,7 @@ const TocDrawer = ({ post, cRef }) => {
           </>}
       </div>
     </div>
-    {/* 背景蒙版 */}
+    {/* background mask */}
     <div id='right-drawer-background' className={(tocVisible ? 'block' : 'hidden') + ' fixed top-0 left-0 z-30 w-full h-full'}
          onClick={switchVisible} />
   </>
