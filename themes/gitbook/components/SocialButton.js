@@ -2,7 +2,7 @@ import BLOG from '@/blog.config'
 import React from 'react'
 
 /**
- * 社交联系方式按钮组
+ * Social contact button set
  * @returns {JSX.Element}
  * @constructor
  */
