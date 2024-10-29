@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 /**
- * 折叠菜单
+ * Collapse menu
  * @param {*} param0
  * @returns
  */
@@ -45,7 +45,7 @@ export const MenuItemCollapse = (props) => {
             </div>}
         </div>
 
-        {/* 折叠子菜单 */}
+        {/* Collapse submenu */}
         {hasSubMenu && <Collapse isOpen={isOpen} onHeightChange={props.onHeightChange}>
             {link?.subMenus?.map((sLink, index) => {
               return <div key={index} className='
