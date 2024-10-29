@@ -4,17 +4,17 @@ import { uuidToId } from 'notion-utils'
 import { isBrowser } from '@/lib/utils'
 
 /**
- * 目录导航组件
+ * Directory Navigation Component
  * @param toc
  * @returns {JSX.Element}
  * @constructor
  */
 const Catalog = ({ post }) => {
   const toc = post?.toc
-  // 同步选中目录事件
+  // Synchronize selected directory events
   const [activeSection, setActiveSection] = useState(null)
 
-  // 监听滚动事件
+  // Listen for scroll events
   useEffect(() => {
     window.addEventListener('scroll', actionSectionScrollSpy)
     actionSectionScrollSpy()
@@ -56,7 +56,7 @@ const Catalog = ({ post }) => {
     }
   }, throttleMs))
 
-  // 无目录就直接返回空
+  // If there is no directory, it will return empty directly.
   if (!toc || toc.length < 1) {
     return null
   }
