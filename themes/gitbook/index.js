@@ -37,13 +37,13 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 const WWAds = dynamic(() => import('@/components/WWAds'), { ssr: false })
 
-// 主题全局变量
+//Theme global variables
 const ThemeGlobalGitbook = createContext()
 export const useGitBookGlobal = () => useContext(ThemeGlobalGitbook)
 
 /**
- * 基础布局
- * 采用左右两侧布局，移动端使用顶部导航栏
+ * Basic layout
+ * Adopt left and right layout, use top navigation bar on mobile terminal
  * @returns {JSX.Element}
  * @constructor
  */
@@ -67,18 +67,18 @@ const LayoutBase = (props) => {
             <Style/>
 
             <div id='theme-gitbook' className='bg-white dark:bg-hexo-black-gray w-full h-full min-h-screen justify-center dark:text-gray-300'>
-                {/* 顶部导航栏 */}
+                {/* top navigation bar */}
                 <TopNavBar {...props} />
 
                 <main id='wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + 'relative flex justify-between w-full h-full mx-auto'}>
 
-                    {/* 左侧推拉抽屉 */}
+                    {/* Left side sliding drawer */}
                     <div className={'font-sans hidden md:block border-r dark:border-transparent relative z-10 '}>
                         <div className='w-72 py-14 px-6 sticky top-0 overflow-y-scroll h-screen scroll-hidden'>
                             {slotLeft}
                             <SearchInput className='my-3 rounded-md' />
                             <div className='mb-20'>
-                                {/* 所有文章列表 */}
+                                {/* List of all articles */}
                                 <NavPostList filteredNavPages={filteredNavPages} />
                             </div>
 
@@ -109,21 +109,21 @@ const LayoutBase = (props) => {
                                 {children}
                             </Transition>
 
-                            {/* Google广告 */}
+                            {/* Google ads */}
                             <AdSlot type='in-article' />
                             <WWAds className='w-full' orientation='horizontal'/>
 
-                            {/* 回顶按钮 */}
+                            {/* Back button */}
                             <JumpToTopButton />
                         </div>
 
-                        {/* 底部 */}
+                        {/* bottom */}
                         <div className='md:hidden'>
                             <Footer {...props} />
                         </div>
                     </div>
 
-                    {/*  右侧侧推拉抽屉 */}
+                    {/*  Right side sliding drawer */}
                     <div style={{ width: '32rem' }} className={'hidden xl:block dark:border-transparent relative z-10 '}>
                         <div className='py-14 px-6 sticky top-0'>
                             <ArticleInfo post={props?.post ? props?.post : props.notice} />
@@ -136,7 +136,7 @@ const LayoutBase = (props) => {
                                     {CONFIG.WIDGET_REVOLVER_MAPS === 'true' && <RevolverMaps />}
                                     <Live2D />
                                 </>}
-                                {/* gitbook主题首页只显示公告 */}
+                                {/* The gitbook theme homepage only displays announcements */}
                                 <Announcement {...props} />
                             </div>
 
@@ -148,15 +148,15 @@ const LayoutBase = (props) => {
 
                 </main>
 
-                {/* 移动端悬浮目录按钮 */}
+                {/* Mobile floating directory button */}
                 {showTocButton && !tocVisible && <div className='md:hidden fixed right-0 bottom-52 z-30 bg-white border-l border-t border-b dark:border-gray-800 rounded'>
                     <FloatTocButton {...props} />
                 </div>}
 
-                {/* 移动端导航抽屉 */}
+                {/* Mobile navigation drawer */}
                 <PageNavDrawer {...props} filteredNavPages={filteredNavPages} />
 
-                {/* 移动端底部导航栏 */}
+                {/* Mobile bottom navigation bar */}
                 {/* <BottomMenuBar {...props} className='block md:hidden' /> */}
 
             </div>
@@ -165,8 +165,8 @@ const LayoutBase = (props) => {
 }
 
 /**
- * 首页
- * 重定向到某个文章详情页
+ * front page
+ * Redirect to an article details page
  * @param {*} props
  * @returns
  */
@@ -174,14 +174,14 @@ const LayoutIndex = (props) => {
   const router = useRouter()
   useEffect(() => {
     router.push(CONFIG.INDEX_PAGE).then(() => {
-      // console.log('跳转到指定首页', CONFIG.INDEX_PAGE)
+      // console.log('Jump to the specified homepage', CONFIG.INDEX_PAGE)
       setTimeout(() => {
         if (isBrowser) {
           const article = document.getElementById('notion-article')
           if (!article) {
-            console.log('请检查您的Notion数据库中是否包含此slug页面： ', CONFIG.INDEX_PAGE)
+            console.log('Please check if your Notion database contains this slug page： ', CONFIG.INDEX_PAGE)
             const containerInner = document.querySelector('#theme-gitbook #container-inner')
-            const newHTML = `<h1 class="text-3xl pt-12  dark:text-gray-300">配置有误</h1><blockquote class="notion-quote notion-block-ce76391f3f2842d386468ff1eb705b92"><div>请在您的notion中添加一个slug为${CONFIG.INDEX_PAGE}的文章</div></blockquote>`
+            const newHTML = `<h1 class="text-3xl pt-12  dark:text-gray-300">Configuration error</h1><blockquote class="notion-quote notion-block-ce76391f3f2842d386468ff1eb705b92"><div>Please add a slug to your notice as${CONFIG.INDEX_PAGE}articles</div></blockquote>`
             containerInner?.insertAdjacentHTML('afterbegin', newHTML)
           }
         }
@@ -193,8 +193,8 @@ const LayoutIndex = (props) => {
 }
 
 /**
- * 文章列表 无
- * 全靠页面导航
+ * Article list None
+ * All depends on page navigation
  * @param {*} props
  * @returns
  */
@@ -205,7 +205,7 @@ const LayoutPostList = (props) => {
 }
 
 /**
- * 文章详情
+ * Article details
  * @param {*} props
  * @returns
  */
@@ -214,7 +214,7 @@ const LayoutSlug = (props) => {
 
   return (
         <LayoutBase {...props} >
-            {/* 文章锁 */}
+            {/* Article lock */}
             {lock && <ArticleLock validPassword={validPassword} />}
 
             {!lock && <div id='container'>
@@ -222,13 +222,13 @@ const LayoutSlug = (props) => {
                 {/* title */}
                 <h1 className="text-3xl pt-12  dark:text-gray-300">{post?.title}</h1>
 
-                {/* Notion文章主体 */}
+                {/* Notion article body */}
                 {post && (<section id="article-wrapper" className="px-1">
                     <NotionPage post={post} />
 
-                    {/* 分享 */}
+                    {/* share */}
                     <ShareBar post={post} />
-                    {/* 文章分类和标签信息 */}
+                    {/* Article classification and tag information */}
                     <div className='flex justify-between'>
                         {CONFIG.POST_DETAIL_CATEGORY && post?.category && <CategoryItem category={post.category} />}
                         <div>
@@ -251,8 +251,8 @@ const LayoutSlug = (props) => {
 }
 
 /**
- * 没有搜索
- * 全靠页面导航
+ * No search
+ * All depends on page navigation
  * @param {*} props
  * @returns
  */
@@ -261,8 +261,8 @@ const LayoutSearch = (props) => {
 }
 
 /**
- * 归档页面基本不会用到
- * 全靠页面导航
+ *Archive pages are basically not used
+ * All depends on page navigation
  * @param {*} props
  * @returns
  */
@@ -317,7 +317,7 @@ const LayoutCategoryIndex = (props) => {
 }
 
 /**
- * 标签列表
+ * tag list
  */
 const LayoutTagIndex = (props) => {
   const { tagOptions } = props
