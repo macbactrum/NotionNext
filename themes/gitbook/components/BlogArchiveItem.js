@@ -2,7 +2,7 @@ import BLOG from '@/blog.config'
 import Link from 'next/link'
 
 /**
- * 归档分组
+ * Archive grouping
  * @param {*} param0
  * @returns
  */
