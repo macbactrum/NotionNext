@@ -1,9 +1,9 @@
 
 /**
- * 跳转到网页顶部
- * 当屏幕下滑500像素后会出现该控件
- * @param targetRef 关联高度的目标html标签
- * @param showPercent 是否显示百分比
+ * Jump to top of page
+ * This control will appear when the screen slides down 500 pixels
+ * @param targetRef The target html tag associated with the height
+ * @param showPercent whether to display the percentage
  * @returns {JSX.Element}
  * @constructor
  */
