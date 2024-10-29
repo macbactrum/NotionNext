@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import Collapse from '@/components/Collapse'
 
 /**
- * 导航列表
- * @param posts 所有文章
- * @param tags 所有标签
+ * Navigation list
+ * @param posts all posts
+ * @param tags all tags
  * @returns {JSX.Element}
  * @constructor
  */
