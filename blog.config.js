@@ -185,6 +185,25 @@ const BLOG = {
       IMG_URL_TYPE: process.env.NEXT_PUBLIC_IMG_TYPE || 'Notion', // Cấu hình này đã không còn hiệu lực, vui lòng không sử dụng
       IMG_SHADOW: process.env.NEXT_PUBLIC_IMG_SHADOW || false, // Hình ảnh bài viết có tự động thêm bóng đổ hay không
 
+      // Thống kê và phân tích
+      ANALYTICS_VERCEL: process.env.NEXT_PUBLIC_ANALYTICS_VERCEL || false, // Thống kê Vercel
+      ANALYTICS_BUSUANZI_ENABLE: process.env.NEXT_PUBLIC_ANALYTICS_BUSUANZI_ENABLE || true, // Hiển thị số lượt đọc và truy cập
+      ANALYTICS_BAIDU_ID: process.env.NEXT_PUBLIC_ANALYTICS_BAIDU_ID || '', // Baidu Analytics ID
+      ANALYTICS_CNZZ_ID: process.env.NEXT_PUBLIC_ANALYTICS_CNZZ_ID || '', // CNZZ Analytics ID
+      ANALYTICS_GOOGLE_ID: process.env.NEXT_PUBLIC_ANALYTICS_GOOGLE_ID || '', // Google Analytics ID
+
+      // SEO
+      SEO_GOOGLE_SITE_VERIFICATION: process.env.NEXT_PUBLIC_SEO_GOOGLE_SITE_VERIFICATION || '', // Google site verification
+      SEO_BAIDU_SITE_VERIFICATION: process.env.NEXT_PUBLIC_SEO_BAIDU_SITE_VERIFICATION || '', // Baidu site verification
+
+      // Quảng cáo Google AdSense
+      ADSENSE_GOOGLE_ID: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_ID || '', // Google AdSense ID
+      ADSENSE_GOOGLE_TEST: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_TEST || false, // Chế độ test Google AdSense
+      ADSENSE_GOOGLE_SLOT_IN_ARTICLE: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_SLOT_IN_ARTICLE || '', // Slot quảng cáo trong bài viết
+      ADSENSE_GOOGLE_SLOT_FLOW: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_SLOT_FLOW || '', // Slot quảng cáo luồng
+      ADSENSE_GOOGLE_SLOT_NATIVE: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_SLOT_NATIVE || '', // Slot quảng cáo native
+      ADSENSE_GOOGLE_SLOT_AUTO: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_SLOT_AUTO || '', // Slot quảng cáo tự động
+
 
       // Hệ thống bình luận - Tất cả đã bị vô hiệu hóa
       COMMENT_WEBMENTION: {
