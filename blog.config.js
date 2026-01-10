@@ -185,6 +185,16 @@ const BLOG = {
       IMG_URL_TYPE: process.env.NEXT_PUBLIC_IMG_TYPE || 'Notion', // Cấu hình này đã không còn hiệu lực, vui lòng không sử dụng
       IMG_SHADOW: process.env.NEXT_PUBLIC_IMG_SHADOW || false, // Hình ảnh bài viết có tự động thêm bóng đổ hay không
 
+
+      // Hệ thống bình luận - Tất cả đã bị vô hiệu hóa
+      COMMENT_WEBMENTION: {
+            ENABLE: false,
+            AUTH: '',
+            HOSTNAME: '',
+            TWITTER_USERNAME: '',
+            TOKEN: ''
+      },
+
       // Liên quan đến phát triển
       NOTION_ACCESS_TOKEN: process.env.NOTION_ACCESS_TOKEN || '', // Hữu ích nếu bạn không muốn công khai cơ sở dữ liệu của mình
       DEBUG: process.env.NEXT_PUBLIC_DEBUG || false, // Có hiển thị nút debug hay không
