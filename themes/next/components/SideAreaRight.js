@@ -23,12 +23,12 @@ const NextRecentComments = dynamic(() => import('./NextRecentComments'))
  * @constructor
  */
 const SideAreaRight = (props) => {
-  const { tagOptions, currentTag, slot, categoryOptions, currentCategory, notice, latestPosts } = props
-  const { locale } = useGlobal()
-  const router = useRouter()
-  const announcementVisible = notice && Object.keys(notice).length > 0
+    const { tagOptions, currentTag, slot, categoryOptions, currentCategory, notice, latestPosts } = props
+    const { locale } = useGlobal()
+    const router = useRouter()
+    const announcementVisible = notice && Object.keys(notice).length > 0
 
-  return (<aside id='right' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'mr-4' : 'ml-4') + ' space-y-4 hidden xl:block flex-col w-60 relative z-10'}>
+    return (<aside id='right' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'mr-4' : 'ml-4') + ' space-y-4 hidden xl:block flex-col w-60 relative z-10'}>
 
         {CONFIG.RIGHT_AD && <Card className='mb-2'>
             {/* 展示广告  */}
@@ -45,9 +45,10 @@ const SideAreaRight = (props) => {
 
         <div className="sticky top-0 space-y-4 w-full">
 
-            {announcementVisible && <Card>
+            {/* Announcement disabled */}
+            {/* {announcementVisible && <Card>
                 <Announcement post={notice} />
-            </Card>}
+            </Card>} */}
 
             {CONFIG.RIGHT_LATEST_POSTS && <Card><LatestPostsGroup latestPosts={latestPosts} /></Card>}
             {slot}
@@ -107,6 +108,6 @@ const SideAreaRight = (props) => {
 
         </div>
     </aside>
-  )
+    )
 }
 export default SideAreaRight
