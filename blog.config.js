@@ -88,6 +88,34 @@ const BLOG = {
       // Bố cục thanh bên có đảo ngược hay không (trái thành phải, phải thành trái) - Giao diện được hỗ trợ: hexo next medium fukasawa example
       LAYOUT_SIDEBAR_REVERSE: false,
 
+      // Facebook - Đã vô hiệu hóa
+      FACEBOOK_APP_ID: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID || '',
+      FACEBOOK_PAGE_ID: process.env.NEXT_PUBLIC_FACEBOOK_PAGE_ID || '',
+      FACEBOOK_PAGE: process.env.NEXT_PUBLIC_FACEBOOK_PAGE || null,
+      FACEBOOK_PAGE_TITLE: process.env.NEXT_PUBLIC_FACEBOOK_PAGE_TITLE || null,
+
+      // Music Player - Đã vô hiệu hóa
+      MUSIC_PLAYER: process.env.NEXT_PUBLIC_MUSIC_PLAYER || false,
+      MUSIC_PLAYER_VISIBLE: process.env.NEXT_PUBLIC_MUSIC_PLAYER_VISIBLE || false,
+      MUSIC_PLAYER_AUTO_PLAY: process.env.NEXT_PUBLIC_MUSIC_PLAYER_AUTO_PLAY || false,
+      MUSIC_PLAYER_LRC_TYPE: process.env.NEXT_PUBLIC_MUSIC_PLAYER_LRC_TYPE || '0',
+      MUSIC_PLAYER_CDN_URL: process.env.NEXT_PUBLIC_MUSIC_PLAYER_CDN_URL || '',
+      MUSIC_PLAYER_ORDER: process.env.NEXT_PUBLIC_MUSIC_PLAYER_ORDER || 'list',
+      MUSIC_PLAYER_AUDIO_LIST: [],
+      MUSIC_PLAYER_METING: process.env.NEXT_PUBLIC_MUSIC_PLAYER_METING || false,
+      MUSIC_PLAYER_METING_SERVER: process.env.NEXT_PUBLIC_MUSIC_PLAYER_METING_SERVER || 'netease',
+      MUSIC_PLAYER_METING_ID: process.env.NEXT_PUBLIC_MUSIC_PLAYER_METING_ID || '',
+      MUSIC_PLAYER_METING_LRC_TYPE: process.env.NEXT_PUBLIC_MUSIC_PLAYER_METING_LRC_TYPE || '1',
+
+      // WWAds (Chinese ad network) - Đã vô hiệu hóa
+      AD_WWADS_ID: process.env.NEXT_PUBLIC_WWAD_ID || null,
+      AD_WWADS_BLOCK_DETECT: process.env.NEXT_PUBLIC_WWADS_AD_BLOCK_DETECT || false,
+
+      // Ackee Analytics - Đã vô hiệu hóa
+      ANALYTICS_ACKEE_TRACKER: process.env.NEXT_PUBLIC_ANALYTICS_ACKEE_TRACKER || '',
+      ANALYTICS_ACKEE_DATA_SERVER: process.env.NEXT_PUBLIC_ANALYTICS_ACKEE_DATA_SERVER || '',
+      ANALYTICS_ACKEE_DOMAIN_ID: process.env.NEXT_PUBLIC_ANALYTICS_ACKEE_DOMAIN_ID || '',
+
       // START********Liên quan đến mã code********
       // PrismJs liên quan đến mã code
       PRISM_JS_PATH: 'https://npm.elemecdn.com/prismjs@1.29.0/components/',
