@@ -5,7 +5,7 @@ const BLOG = {
       // QUAN TRỌNG: ID trang Notion của bạn
       // Hướng dẫn: Tạo một trang Notion mới, copy URL và lấy ID (32 ký tự)
       // Ví dụ: https://notion.so/your-page-id-here
-      NOTION_PAGE_ID: process.env.NOTION_PAGE_ID || '02ab3b8678004aa69e9e415905ef32a5',
+      NOTION_PAGE_ID: process.env.NOTION_PAGE_ID || '2e5d43e2539a8035a42df717b216ae38',
 
       // Cấu hình Next.js
       PSEUDO_STATIC: false,
@@ -30,9 +30,9 @@ const BLOG = {
 
       // ============ THÔNG TIN CÁ NHÂN ============
 
-      AUTHOR: 'Tên của bạn', // Thay đổi thành tên của bạn
-      BIO: 'Blogger | Writer | Creator', // Giới thiệu ngắn
-      LINK: 'https://your-blog.vercel.app', // Địa chỉ blog của bạn
+      AUTHOR: 'Mark', // Thay đổi thành tên của bạn
+      BIO: 'IT', // Giới thiệu ngắn
+      LINK: 'https://macbactrum-notionnext-e4o1bcl2x-trummacbacs-projects.vercel.app', // Địa chỉ blog của bạn
       KEYWORDS: 'blog, tiếng việt, notion', // Từ khóa SEO
 
       // Liên kết mạng xã hội (để trống nếu không dùng)
