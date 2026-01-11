@@ -5,7 +5,7 @@ const BLOG = {
       // QUAN TRỌNG: ID trang Notion của bạn
       // Hướng dẫn: Tạo một trang Notion mới, copy URL và lấy ID (32 ký tự)
       // Ví dụ: https://notion.so/your-page-id-here
-      NOTION_PAGE_ID: process.env.NOTION_PAGE_ID || '2e5d43e2539a8035a42df717b216ae38',
+      NOTION_PAGE_ID: process.env.NOTION_PAGE_ID || '2e5d43e2539a80ef80d3d7c875db6937',
 
       // Cấu hình Next.js
       PSEUDO_STATIC: false,
