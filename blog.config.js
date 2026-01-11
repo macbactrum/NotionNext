@@ -11,8 +11,8 @@ const BLOG = {
       PSEUDO_STATIC: false,
       NEXT_REVALIDATE_SECOND: 5,
 
-      // Giao diện - Giống Knowledge Base (như hình bạn gửi)
-      THEME: process.env.NEXT_PUBLIC_THEME || 'gitbook',
+      // Giao diện - hexo theme shows post list by default
+      THEME: process.env.NEXT_PUBLIC_THEME || 'hexo',
       THEME_SWITCH: false, // Ẩn nút chuyển đổi giao diện
 
       // Ngôn ngữ - BẮT BUỘC TIẾNG VIỆT
