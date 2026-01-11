@@ -198,7 +198,7 @@ const LayoutIndex = (props) => {
     {/* Show post list when INDEX_PAGE is empty */}
     {(!CONFIG.INDEX_PAGE || CONFIG.INDEX_PAGE === '') && (
       <div className='mt-10'>
-        <BlogPostListPage {...props} />
+        <BlogPostListPage posts={props.posts} postCount={props.postCount} />
       </div>
     )}
   </LayoutBase>
