@@ -11,8 +11,8 @@ const BLOG = {
       PSEUDO_STATIC: false,
       NEXT_REVALIDATE_SECOND: 5,
 
-      // Giao diện - medium theme (simple and reliable)
-      THEME: process.env.NEXT_PUBLIC_THEME || 'medium',
+      // Giao diện - next theme shows post list directly
+      THEME: process.env.NEXT_PUBLIC_THEME || 'next',
       THEME_SWITCH: false, // Ẩn nút chuyển đổi giao diện
 
       // Ngôn ngữ - BẮT BUỘC TIẾNG VIỆT
