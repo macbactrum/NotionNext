@@ -1,6 +1,6 @@
 const CONFIG = {
 
-  INDEX_PAGE: 'about', //Articles displayed on the document homepage, please make sure this path is included in your notice database
+  INDEX_PAGE: '', // Empty = show post list on homepage instead of redirecting to a single page
 
   AUTO_SORT: process.env.NEXT_PUBLIC_GITBOOK_AUTO_SORT || true, // Whether to automatically sort articles by category name; automatic grouping may disrupt the order of articles in your Notion
 
