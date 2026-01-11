@@ -173,6 +173,11 @@ const LayoutBase = (props) => {
 const LayoutIndex = (props) => {
   const router = useRouter()
   useEffect(() => {
+    // Skip redirect if INDEX_PAGE is empty - show post list instead
+    if (!CONFIG.INDEX_PAGE || CONFIG.INDEX_PAGE === '') {
+      return
+    }
+
     router.push(CONFIG.INDEX_PAGE).then(() => {
       // console.log('Jump to the specified homepage', CONFIG.INDEX_PAGE)
       setTimeout(() => {
