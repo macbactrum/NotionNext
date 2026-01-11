@@ -274,7 +274,7 @@ const BLOG = {
       AVATAR: '/avatar.svg',
       TITLE: 'Blog của tôi',
       HOME_BANNER_IMAGE: '/bg_image.jpg',
-      DESCRIPTION: 'Blog cá nhân được tạo bằng NotionNext',
+      DESCRIPTION: 'Blog cá nhân',
 
       // ============ HÌNH ẢNH ============
 
