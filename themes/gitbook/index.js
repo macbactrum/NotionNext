@@ -33,6 +33,7 @@ import { Style } from './style'
 import CommonHead from '@/components/CommonHead'
 import BlogArchiveItem from './components/BlogArchiveItem'
 import BlogPostListPage from './components/BlogPostListPage'
+import BlogPostCard from './components/BlogPostCard'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 const WWAds = dynamic(() => import('@/components/WWAds'), { ssr: false })
@@ -196,9 +197,13 @@ const LayoutIndex = (props) => {
 
   return <LayoutBase {...props}>
     {/* Show post list when INDEX_PAGE is empty */}
-    {(!CONFIG.INDEX_PAGE || CONFIG.INDEX_PAGE === '') && (
-      <div className='mt-10'>
-        <BlogPostListPage posts={props.posts} postCount={props.postCount} />
+    {(!CONFIG.INDEX_PAGE || CONFIG.INDEX_PAGE === '') && props.posts && props.posts.length > 0 && (
+      <div className='mt-10 w-full'>
+        <div id='posts-wrapper'>
+          {props.posts.map(post => (
+            <BlogPostCard key={post.id} post={post} />
+          ))}
+        </div>
       </div>
     )}
   </LayoutBase>
