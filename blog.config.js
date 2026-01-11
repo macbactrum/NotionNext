@@ -251,7 +251,7 @@ const BLOG = {
             type_notice: 'Notice',
             type_menu: 'Menu',
             type_sub_menu: 'SubMenu',
-            title: 'title',
+            title: 'Title',
             status: 'status',
             status_publish: 'Published',
             status_invisible: 'Invisible',
