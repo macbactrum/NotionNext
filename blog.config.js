@@ -111,7 +111,7 @@ const BLOG = {
       // ============ CHIA SẺ ============
 
       POST_SHARE_BAR_ENABLE: 'true',
-      POSTS_SHARE_SERVICES: 'link,email,facebook,twitter,telegram',
+      POSTS_SHARE_SERVICES: 'link',
 
       // ============ BÀI VIẾT ============
 
