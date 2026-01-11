@@ -11,12 +11,12 @@ const BLOG = {
       PSEUDO_STATIC: false,
       NEXT_REVALIDATE_SECOND: 5,
 
-      // Giao diện - Chọn một trong: gitbook, hexo, medium, next, simple
-      THEME: process.env.NEXT_PUBLIC_THEME || 'simple',
+      // Giao diện - Giống Knowledge Base (như hình bạn gửi)
+      THEME: process.env.NEXT_PUBLIC_THEME || 'gitbook',
       THEME_SWITCH: false, // Ẩn nút chuyển đổi giao diện
 
-      // Ngôn ngữ
-      LANG: 'vi-VN', // Tiếng Việt
+      // Ngôn ngữ - BẮT BUỘC TIẾNG VIỆT
+      LANG: process.env.NEXT_PUBLIC_LANG || 'vi-VN', // Tiếng Việt
 
       // Năm bắt đầu (hiển thị ở footer)
       SINCE: 2026,
