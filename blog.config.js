@@ -11,8 +11,8 @@ const BLOG = {
       PSEUDO_STATIC: false,
       NEXT_REVALIDATE_SECOND: 5,
 
-      // Giao diện - hexo theme shows post list by default
-      THEME: process.env.NEXT_PUBLIC_THEME || 'hexo',
+      // Giao diện - medium theme (simple and reliable)
+      THEME: process.env.NEXT_PUBLIC_THEME || 'medium',
       THEME_SWITCH: false, // Ẩn nút chuyển đổi giao diện
 
       // Ngôn ngữ - BẮT BUỘC TIẾNG VIỆT
