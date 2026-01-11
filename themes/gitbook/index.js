@@ -194,7 +194,14 @@ const LayoutIndex = (props) => {
     })
   }, [])
 
-  return <LayoutBase {...props} />
+  return <LayoutBase {...props}>
+    {/* Show post list when INDEX_PAGE is empty */}
+    {(!CONFIG.INDEX_PAGE || CONFIG.INDEX_PAGE === '') && (
+      <div className='mt-10'>
+        <BlogPostListPage {...props} />
+      </div>
+    )}
+  </LayoutBase>
 }
 
 /**
